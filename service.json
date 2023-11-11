@@ -1,0 +1,5 @@
+{
+    "name": "Events",
+    "link": "/apps/events",
+    "provider": "/src/ServiceProvider.pm"
+}
