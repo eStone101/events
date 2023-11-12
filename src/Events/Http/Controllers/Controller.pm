@@ -4,6 +4,7 @@ use strict;
 use warnings;
 
 use Foundation::Appify;
+use Data::Dumper;
 
 sub new {
     my $class = shift;
@@ -40,6 +41,20 @@ sub dashboard {
     return $template->output();
 
     return '';
+}
+
+sub create {
+    my $self = shift;
+    my $request = shift;
+
+
+    die Dumper($request);
+
+    my $template = &_::template('events::dashboard', {
+        isAdmin => user()->get('eventAdmin'),
+    });
+
+    return $template->output();
 }
 
 1;

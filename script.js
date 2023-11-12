@@ -1,23 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
     
-    const events = document.getElementById("events");
+    const createEvent = document.getElementById("createEvent");
 
-    if (!events) {
+    if (!createEvent) {
         return;
     }
 
-    events.addEventListener("click", function (event) {
+    createEvent.addEventListener("click", function (createEvent) {
 
-        const date = new Date();
-
-        const formattedDate = date.toLocaleString('de-DE');
-
-        event.target.dispatchEvent(new CustomEvent("notify", {
-            bubbles: true,
-            detail: {
-                text: formattedDate + " - Events!"
-            },
-        }));
+        
 
     });
 

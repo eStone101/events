@@ -41,6 +41,7 @@ Http::Route::group({
         as => 'apps.events.',
 
     }, sub {
+
         
         Http::Route::get('/', sub {
 
@@ -53,6 +54,15 @@ Http::Route::group({
                 $request,
             );
 
+        }),
+
+        Http::Route::post('/create', sub {
+
+            my $request = shift;
+            my $next = shift;
+    
+
+            return Events::Http::Controllers::Controller->new()->create($request); 
         }),
 
         Http::Route::group({
@@ -86,7 +96,6 @@ Http::Route::group({
                 );
 
             }),
-
         });
 
     });
