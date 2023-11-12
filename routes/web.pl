@@ -65,6 +65,15 @@ Http::Route::group({
             return Events::Http::Controllers::Controller->new()->create($request); 
         }),
 
+        Http::Route::get('/show', sub {
+
+            my $request = shift;
+            my $next = shift;
+    
+
+            return Events::Http::Controllers::Controller->new()->show($request); 
+        }),
+
         Http::Route::group({
 
             # The prefix of the http route.
