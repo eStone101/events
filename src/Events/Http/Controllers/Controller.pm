@@ -27,10 +27,8 @@ sub welcome {
     my $EventRepository = Events::Repositories::EventRepository->new();
     my $upcomingEvents =  $EventRepository->getUpcomingEvents();
 
-    die Dumper(@$upcomingEvents[0]);
-
     my $template = &_::template('events::welcome', {
-
+        events => $upcomingEvents,
         isAdmin => user()->isAdmin(),
         adminRoute => '/apps/events/admin',
     });

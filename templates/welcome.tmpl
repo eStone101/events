@@ -6,13 +6,12 @@
     </div>
 </TMPL_IF>
 
-
-<div class="flex justify-center mt-32">
-    <div class="flex flex-col gap-4">
-        <a class="border-2 border-solid border-sky-500 rounded-lg p-2 bg-sky-500 text-white" href="%event_link%">fuhashfsa</a>
-        <a class="border-2 border-solid border-sky-500 rounded-lg p-2 bg-sky-500 text-white" href="%event_link%">sdippasnjhfpoi</a>
-        <a class="border-2 border-solid border-sky-500 rounded-lg p-2 bg-sky-500 text-white" href="%event_link%">mcxivnhoihnfoashof</a>
+<span class="text-lg pb-8" >Upcoming Events:</span>
+<div class="flex justify-center mt-16">
+    <div class="flex flex-col gap-4 w-64">
+        <TMPL_LOOP NAME="events">
+            <a class="border-2 border-solid border-sky-500 rounded-lg p-2 bg-sky-500 text-white" href="/apps/events/show?id=%id%">%type%</a>
+        </TMPL_LOOP>
     </div>
-    
 </div>
     
