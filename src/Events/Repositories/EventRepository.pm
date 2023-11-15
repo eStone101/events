@@ -30,6 +30,14 @@ sub get {
     my $self = shift;
     my $params = shift;
 
+    my $table = 'events';
+
+    my $sql = sprintf('SELECT * FROM %s WHERE %s = %s', $table, @$params[0], @$params[1]);
+    my $dbh = &_::app()->database();
+    my $sth = $dbh->prepare($sql);
+    $sth->execute();
+
+    return $sth->fetchrow_hashref();
 }
 
 sub getUpcomingEvents {

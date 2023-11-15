@@ -68,10 +68,16 @@ sub show {
     my $self = shift;
     my $request = shift;
 
-    die $request->param('id');
+    my @params = split(/\=/,$ENV{'QUERY_STRING'});
+
+    my $EventRepository = Events::Repositories::EventRepository->new();
+    my $event =  $EventRepository->get(\@params);
 
     my $template = &_::template('events::show', {
-        
+        date => $event->{date},
+        type => $event->{type},
+        id => $event->{id},
+        location => $event->{location}
     });
 
     return $template->output();
