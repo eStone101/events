@@ -56,16 +56,30 @@ Http::Route::group({
 
         }),
 
-        Http::Route::post('/create', sub {
+        Http::Route::get('/', sub {
 
             my $request = shift;
-            my $next = shift;
-    
 
-            return Events::Http::Controllers::Controller->new()->create($request); 
+            # TODO: Implement default controller routing instead of creating
+            # TODO: an instance of the controller class.
+
+            return Events::Http::Controllers::Controller->new()->welcome(
+                $request,
+            );
+
         }),
 
-        Http::Route::get('/show', sub {
+        Http::Route::get('/{key}/create', sub {
+
+            my $request = shift;
+
+            return Events::Http::Controllers::Controller->new()->create(
+                $request,
+            );
+
+        }),
+
+        Http::Route::get('/{id}', sub {
 
             my $request = shift;
             my $next = shift;

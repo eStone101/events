@@ -1,0 +1,44 @@
+{
+    "ww_essen" : {
+        "key" : "ww_essen",
+        "name" : "Weißwurst Essen",
+        "fields" : [
+            {
+                "key"  : "ww-amount",
+                "label" : "Weißwürste:",
+                "type" : "number"
+            },
+            {
+                "key"  : "date",
+                "label" : "Datum:",
+                "type" : "datetime-local"
+            },
+            {
+                "key"  : "brz-amount",
+                "label" : "Brezen:",
+                "type" : "number"
+            }
+        ]
+    },
+    "ww_essen2" : {
+        "key" : "ww_essen2",
+        "name" : "Weißwurst Essen2",
+        "fields" : [
+            {
+                "key"  : "ww-amount2",
+                "label" : "Weißwürste:2",
+                "type" : "number2"
+            },
+            {
+                "key"  : "date",
+                "label" : "Datum:",
+                "type" : "datetime-local"
+            },
+            {
+                "key"  : "brz-amount",
+                "label" : "Brezen:",
+                "type" : "number"
+            }
+        ]
+    }
+}
